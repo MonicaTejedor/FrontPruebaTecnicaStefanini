@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="form-page">
+  <div class="form">
+    <form class="register-form" (ngSubmit)="onSubmit()"> 
+      <label for="name">Nombre Completo</label>
+      <input type="text" id="name" placeholder="Nombre Completo" [(ngModel)]="user.nombreUsuario"
+        [ngModelOptions]="{standalone: true}" />
+      <div>
+        <label for="type_id_document">Tipo de Documento de Identidad</label>
+        <select id="type_id_document" class="form-select" aria-label="Default select example"
+          [(ngModel)]="user.tipoDocumento" [ngModelOptions]="{standalone: true}">
+          <option value="CC" selected>Cédula de Ciudadanía</option>
+          <option value="CE">Cédula de Extranjería</option>
+          <option value="PA">Pasaporte</option>
+        </select>
+      </div>
+      <label for="id_document">Número de Documento de Identidad</label>
+      <input type="text" id="id_document" placeholder="Número de Documento de Identidad"
+        [(ngModel)]="user.numeroDocumento" [ngModelOptions]="{standalone: true}" />
+      <div>
+        <label for="category">Categoría</label>
+        <select id="category" class="form-select" aria-label="Default select example" [(ngModel)]="user.categoria"
+          [ngModelOptions]="{standalone: true}">
+          <option value="Moda" selected>Moda</option>
+          <option value="Mercado">Mercado</option>
+          <option value="Ahorro">Ahorro</option>
+          <option value="Diversion">Diversión</option>
+        </select>
+      </div>
+      <label for="card">¿Tiene Tarjeta?</label>
+      <select id="card" class="form-select" aria-label="Default select example" [(ngModel)]="user.tarjeta"
+        [ngModelOptions]="{standalone: true}">
+        <option value="true" selected>Sí</option>
+        <option value="false">No</option>
+      </select>
+      <button>Crear usuario</button>
+    </form>
+
+  </div>
+</div>
